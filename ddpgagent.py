@@ -3,8 +3,6 @@ from tensorflow.keras.layers import Dense, Input, concatenate, Lambda
 from tensorflow.keras.optimizers import Adam
 from keras.callbacks import EarlyStopping
 from keras.callbacks import TensorBoard
-from tensorflow.keras import backend as K
-from pynverse import inversefunc
 import os
 import random
 import numpy as np

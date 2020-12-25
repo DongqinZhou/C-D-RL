@@ -7,7 +7,7 @@ from multiprocessing import Process
 
 t0 = dt.datetime.now()
 # ROOT_PATH = r'/home/dongqin/MFD/RL_control/C-RL'
-ROOT_PATH = r'/mnt/wwn-0x50000399d8c991bd-part2/dfz5094/MFD/RL_control/C-RL'
+ROOT_PATH = r'C:\Users\dfz5094\Documents\C-RL'
 
 
 def pipeline_wrapper(dic_traffic_conf, dic_exp_conf, dic_agent_conf, dic_path):
@@ -29,7 +29,7 @@ def parse_args():
     parser.add_argument("--sigma", type=int, default=0)
     parser.add_argument("--model", type=str, default='DDPGAgent')
     parser.add_argument("--num_round", type=int, default=250)
-    parser.add_argument("--num_gen", type=int, default=32)
+    parser.add_argument("--num_gen", type=int, default=2)
     parser.add_argument("--memo", type=str, default='0_0')
     parser.add_argument("--demand_scaler", type=int, default=1.0)
 

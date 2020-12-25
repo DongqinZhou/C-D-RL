@@ -223,7 +223,7 @@ class Pipeline:
         all_completion = []
         all_completion_avg = []
 
-        for cnt_round in range(begin_round, self.dic_exp_conf['NUM_ROUNDS']):
+        for cnt_round in range(self.dic_exp_conf['NUM_ROUNDS']):
             if (cnt_round + 1) % 50 == 0:
                 self.write_results(all_completion, cnt_round)
 
