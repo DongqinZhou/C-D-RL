@@ -1,4 +1,4 @@
-# MFDRLPC
+# C-D-RL
 
 Code for the C-RL agent in the paper "Model-Free Perimeter Metering Control for Two-Region Urban Networks Using Deep Reinforcement Learning". Inspired by [this](https://github.com/wingsweihua/colight) work
 
