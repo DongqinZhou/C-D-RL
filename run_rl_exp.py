@@ -6,8 +6,7 @@ import datetime as dt
 from multiprocessing import Process
 
 t0 = dt.datetime.now()
-# ROOT_PATH = r'/home/dongqin/MFD/RL_control/C-RL'
-ROOT_PATH = r'/mnt/wwn-0x50000399d8c991bd-part2/dfz5094/MFD/RL_control/C-RL'
+ROOT_PATH = r'/path/to/file/storage'
 
 
 def pipeline_wrapper(dic_traffic_conf, dic_exp_conf, dic_agent_conf, dic_path):
@@ -47,7 +46,7 @@ def main(args=None):
         "STEP_LENGTH": args.step_length,
         "ALPHA": args.alpha,
         "SIGMA": args.sigma,
-        "EARLY_STOPPING": True,  # if False, train until num_rounds
+        "EARLY_STOPPING": True,
         "CV_THRESHOLD": 0.0005,
         "NORMAL_FACTOR": 5,
         "IF_CLIP": False,

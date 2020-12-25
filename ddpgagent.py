@@ -12,7 +12,7 @@ import tensorflow as tf
 
 
 tf.keras.backend.set_floatx('float64')
-SEED = 1234  # 1234, 1997, 3154, 6666, 1287, 6849, 9999, 5469, 6572, 7468, 3528
+SEED = 1234
 random.seed(SEED)
 tf.random.set_seed(SEED)
 
@@ -65,7 +65,7 @@ class Actor:
             model_json = self.actor_network.to_json()
             with open(os.path.join(self.dic_path["PATH_TO_MODEL"], "actor.json"), "w") as json_file:
                 json_file.write(model_json)
-        self.actor_network.save_weights(os.path.join(self.dic_path["PATH_TO_MODEL"], "actor_{}.tf".format(file_name)))
+        self.actor_network.save_weights(os.path.join(self.dic_path["PATH_TO_MODEL"], "actor_{}.h5".format(file_name)))
 
     def load_network_weights_and_architecture(self, file_name, bar_file_name):
         json_file = open(os.path.join(self.dic_path["PATH_TO_MODEL"], "actor.json"), 'r')
@@ -73,12 +73,12 @@ class Actor:
         json_file.close()
         self.actor_network = model_from_json(loaded_model_json)
         self.actor_network = self.build_network()
-        self.actor_network.load_weights(os.path.join(self.dic_path["PATH_TO_MODEL"], "actor_{}.tf".format(file_name)))
+        self.actor_network.load_weights(os.path.join(self.dic_path["PATH_TO_MODEL"], "actor_{}.h5".format(file_name)))
 
         self.actor_network_bar = model_from_json(loaded_model_json)
         self.actor_network_bar = self.build_network()
         self.actor_network_bar.load_weights(os.path.join(self.dic_path["PATH_TO_MODEL"],
-                                                         "actor_{}.tf".format(bar_file_name)))
+                                                         "actor_{}.h5".format(bar_file_name)))
 
 
 class Critic:
@@ -126,19 +126,19 @@ class Critic:
             with open(os.path.join(self.dic_path["PATH_TO_MODEL"], "critic.json"), "w") as json_file:
                 json_file.write(model_json)
 
-        self.critic_network.save_weights(os.path.join(self.dic_path["PATH_TO_MODEL"], "critic_{}.tf".format(file_name)))
+        self.critic_network.save_weights(os.path.join(self.dic_path["PATH_TO_MODEL"], "critic_{}.h5".format(file_name)))
 
     def load_network_weights_and_architecture(self, file_name, bar_file_name):
         json_file = open(os.path.join(self.dic_path["PATH_TO_MODEL"], "critic.json"), 'r')
         loaded_model_json = json_file.read()
         json_file.close()
         self.critic_network = model_from_json(loaded_model_json)
-        self.critic_network.load_weights(os.path.join(self.dic_path["PATH_TO_MODEL"], "critic_{}.tf".format(file_name)))
+        self.critic_network.load_weights(os.path.join(self.dic_path["PATH_TO_MODEL"], "critic_{}.h5".format(file_name)))
         self.critic_network.compile(optimizer=Adam(lr=self.lr, epsilon=1e-8), loss='mse')
 
         self.critic_network_bar = model_from_json(loaded_model_json)
         self.critic_network_bar.load_weights(os.path.join(self.dic_path["PATH_TO_MODEL"],
-                                                          "critic_{}.tf".format(bar_file_name)))
+                                                          "critic_{}.h5".format(bar_file_name)))
 
 
 class DDPGAgent:

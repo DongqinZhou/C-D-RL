@@ -20,8 +20,8 @@ def test(dic_path, cnt_round, dic_traffic_conf, dic_exp_conf, dic_agent_conf, st
     _dic_agent_conf['NOISE_PARAMS'] = 0
     _dic_agent_conf['MIN_NOISE_SCALE'] = 0
     _dic_agent_conf['MAX_NOISE_SCALE'] = 0
+    
     _agent = DIC_AGENTS[dic_exp_conf['MODEL_NAME']](_dic_agent_conf, cnt_round + 1, dic_traffic_conf, dic_path)
-    # _agent.load_network_weights_and_architecture(model_round) replaced by +1 for cnt_round
     path_to_test_round = os.path.join(dic_path["PATH_TO_WORK_DIRECTORY"], "test_round")
     path_to_log = os.path.join(path_to_test_round, model_round)
     if not os.path.exists(path_to_log):

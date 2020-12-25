@@ -184,10 +184,6 @@ class Pipeline:
             os.path.join(path_to_test_round, 'round_{}'.format(cnt_round), 'samples.json'),
             os.path.join(self.dic_path['PATH_TO_RESULTS'], 'round_{}_test_samples.json'.format(cnt_round))
         )
-        copy(
-            os.path.join(self.dic_path["PATH_TO_PLOTS"], 'control.avi'),
-            os.path.join(self.dic_path['PATH_TO_RESULTS'], 'control.avi')
-        )
         path_to_pics = os.path.join(self.dic_path["PATH_TO_PLOTS"], "test_round_{}".format(cnt_round))
         pics = os.listdir(path_to_pics)
         for pic in pics:
