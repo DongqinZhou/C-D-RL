@@ -1,0 +1,7 @@
+# Highly recommend to run the code on Linux
+tensorflow >= 2.0
+keras >= 2.1
+# CUDA >= 10.2
+numpy>=1.18.1
+matplotlib>=3.1.2
+scipy>=1.4.1

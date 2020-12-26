@@ -95,9 +95,9 @@ def main(args=None):
         "IF_CALLBACK": True,
 
         # exploration parameters
-        "NOISE_PARAMS": 0.25,  # Gaussian noise scale
+        "NOISE_PARAMS": 0.3,  # Gaussian noise scale
         "NOISE_DECAY": 0.001,
-        "MIN_NOISE_SCALE": 0.001,
+        "MIN_NOISE_SCALE": 0.05,
         "MAX_NOISE_SCALE": 0.4,
         # other fixed parameters
         "LOSS_FUNCTION": "mean_squared_error",
