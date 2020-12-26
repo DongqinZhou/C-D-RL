@@ -50,7 +50,6 @@ class Actor:
 
     def build_network_from_copy(self, network_copy):
         network_structure = network_copy.to_json()
-        network = self.build_network()
         network_weights = network_copy.get_weights()
         network = model_from_json(network_structure)
         network.set_weights(network_weights)
