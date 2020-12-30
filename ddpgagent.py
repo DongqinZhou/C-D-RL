@@ -71,11 +71,9 @@ class Actor:
         loaded_model_json = json_file.read()
         json_file.close()
         self.actor_network = model_from_json(loaded_model_json)
-        self.actor_network = self.build_network()
         self.actor_network.load_weights(os.path.join(self.dic_path["PATH_TO_MODEL"], "actor_{}.h5".format(file_name)))
 
         self.actor_network_bar = model_from_json(loaded_model_json)
-        self.actor_network_bar = self.build_network()
         self.actor_network_bar.load_weights(os.path.join(self.dic_path["PATH_TO_MODEL"],
                                                          "actor_{}.h5".format(bar_file_name)))
 
